@@ -1,7 +1,7 @@
-import 'package:crud_frontend/UserForm.dart';
-import 'package:crud_frontend/UserList.dart';
+import 'package:crud_frontend/Screens/UserForm.dart';
+import 'package:crud_frontend/Screens/UserList.dart';
 import 'package:flutter/material.dart';
-import 'package:crud_frontend/SplashScreen.dart';
+import 'package:crud_frontend/Screens/SplashScreen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,3 +1,9 @@
-# Default ignored files
-/shelf/
-/workspace.xml
+# Flutter/Dart
+.dart_tool/
+.packages
+build/
+pubspec.lock
+
+# IDE Files
+.idea/
+.vscode/
