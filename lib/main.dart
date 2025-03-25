@@ -1,4 +1,5 @@
 import 'package:crud_frontend/UserForm.dart';
+import 'package:crud_frontend/UserList.dart';
 import 'package:flutter/material.dart';
 import 'package:crud_frontend/SplashScreen.dart';
 
@@ -79,7 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Center(
                 child: SizedBox(
                   width: 125,
-                  child: ElevatedButton(onPressed: (){},
+                  child: ElevatedButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>UserList()));
+                  },
                     style: ElevatedButton.styleFrom(
                       elevation: 11,
                       shadowColor: Colors.black
