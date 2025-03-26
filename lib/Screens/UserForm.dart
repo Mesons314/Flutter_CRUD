@@ -57,8 +57,8 @@ class _formData extends State<UserForm> {
                       requestFocusOnTap: true,
                       dropdownMenuEntries: const <DropdownMenuEntry<String>>[
                         DropdownMenuEntry(value: '1', label: 'Male'),
-                        DropdownMenuEntry(value: '1', label: 'Female'),
-                        DropdownMenuEntry(value: '1', label: 'Other')
+                        DropdownMenuEntry(value: '2', label: 'Female'),
+                        DropdownMenuEntry(value: '3', label: 'Other')
                       ],
                       inputDecorationTheme: InputDecorationTheme(
                         border: OutlineInputBorder(
@@ -138,7 +138,16 @@ class _formData extends State<UserForm> {
                ),
              )
            ],
-         )
+         ),
+
+          SizedBox(height: 100),
+          ElevatedButton(onPressed: (){},
+              child: Text('Submit'),
+            style: ElevatedButton.styleFrom(
+              shadowColor: Colors.black,
+              backgroundColor: Colors.lightBlueAccent,
+            ),
+          )
         ],
       ),
     );

@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="587b5352-31e7-45c1-8030-729a9632c832" name="Changes" comment="Created the user list view">
-      <change afterPath="$PROJECT_DIR$/lib/Models/user_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/SplashScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/SplashScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/UserForm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/UserForm.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/UserList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/UserList.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/widget_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Screens/UserData.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Screens/UserForm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/UserForm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Screens/UserList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/UserList.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
