@@ -14,6 +14,10 @@ class UserForm extends StatefulWidget{
 class _formData extends State<UserForm> {
 
   TextEditingController dateController = TextEditingController();
+
+  TextEditingController firstName = TextEditingController();
+  TextEditingController lastName = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
