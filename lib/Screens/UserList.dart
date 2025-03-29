@@ -1,3 +1,4 @@
+import 'package:crud_frontend/Routes/RoutesName.dart';
 import 'package:flutter/material.dart';
 
 import 'UserData.dart';
@@ -20,7 +21,7 @@ class UserList extends StatefulWidget {
         children: [
           InkWell(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> UserData()));
+              Navigator.pushNamed(context, RoutesName.userData);
             },
             child: ListTile(
               leading: Padding(

@@ -1,7 +1,10 @@
+import 'package:crud_frontend/Routes/RoutesName.dart';
 import 'package:crud_frontend/Screens/UserForm.dart';
 import 'package:crud_frontend/Screens/UserList.dart';
 import 'package:flutter/material.dart';
 import 'package:crud_frontend/Screens/SplashScreen.dart';
+
+import '../Routes/Routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,15 +23,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      initialRoute: RoutesName.splashScreen,
+      onGenerateRoute: Routes.generateRoutes,
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-
   final String title;
 
   @override
@@ -42,9 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
         title: Text(widget.title),
       ),
       body: Center(
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: SizedBox(
                   width: 125,
                   child: ElevatedButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const UserForm()));
+                    Navigator.pushNamed(context, RoutesName.userForm);
                   },
                     style: ElevatedButton.styleFrom(
                       elevation: 11,
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: SizedBox(
                   width: 125,
                   child: ElevatedButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>UserList()));
+                    Navigator.pushNamed(context,RoutesName.userList);
                   },
                     style: ElevatedButton.styleFrom(
                       elevation: 11,
