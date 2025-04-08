@@ -1,4 +1,5 @@
 import 'package:crud_frontend/Routes/RoutesName.dart';
+import 'package:crud_frontend/Services/splash_service.dart';
 import 'package:flutter/material.dart';
 import 'package:crud_frontend/Screens/main.dart';
 
@@ -11,12 +12,12 @@ class SplashScreen extends StatefulWidget{
 }
 
 class splashScreen extends State<SplashScreen>{
+
+  SplashService splashService = SplashService();
+  @override
   void initState(){
     super.initState();
-  Future.delayed(const Duration(seconds: 4),(){
-    Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>MyHomePage(title: 'Bloc')));
-  });
-    
+    splashService.homePage(context);
   }
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:crud_frontend/Widgets/text_field.dart';
 import 'package:flutter/material.dart';
 
 class UserForm extends StatefulWidget{
@@ -27,28 +28,10 @@ class _formData extends State<UserForm> {
       body: Column(
         children: [
           Padding(padding: EdgeInsets.only(left: 15,right: 15,top: 25),
-          child: TextField(
-            decoration: InputDecoration(
-                hintText: "First Name",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12)
-                )
-            ),
-          ),
+          child:text_field(HintText: 'First Name')
           ),
           Padding(padding: EdgeInsets.only(left: 15,right: 15,top: 10),
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: "Last Name",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(
-                  color: Colors.black38,
-                  style: BorderStyle.solid
-                )
-              )
-            ),
-          ),
+          child: text_field(HintText: 'Last Name')
           ),
           Row(
             children: [
@@ -75,7 +58,6 @@ class _formData extends State<UserForm> {
                 margin: EdgeInsets.only(left: 15),
                 width: 200,
                 child: InkWell(
-
                   child: Padding(
                     padding: const EdgeInsets.only(right: 12,top: 12),
                     child: TextField(
@@ -116,28 +98,14 @@ class _formData extends State<UserForm> {
            children: [
              Expanded(
                child: Padding(padding: EdgeInsets.only(top: 12,left: 15),
-                   child: TextField(
-                     decoration: InputDecoration(
-                         hintText: 'Age',
-                         border: OutlineInputBorder(
-                             borderRadius: BorderRadius.circular(12)
-                         )
-                     ),
-                   )
+                   child: text_field(HintText: 'Age')
                ),
              ),
              Container(
                width: 200,
                margin: EdgeInsets.only(left: 15),
                child: Padding(padding: EdgeInsets.only(top: 12,right: 15),
-                 child: TextField(
-                   decoration: InputDecoration(
-                       hintText: 'Location',
-                       border: OutlineInputBorder(
-                           borderRadius: BorderRadius.circular(12)
-                       )
-                   ),
-                 ),
+                 child: text_field(HintText: 'Location',)
                ),
              )
            ],
