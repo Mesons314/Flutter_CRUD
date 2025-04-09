@@ -1,6 +1,7 @@
-import 'dart:developer';
 
+import 'package:crud_frontend/Models/user_model.dart';
 import 'package:crud_frontend/Widgets/text_field.dart';
+import 'package:crud_frontend/user_Repo/user_repository.dart';
 import 'package:flutter/material.dart';
 
 class UserForm extends StatefulWidget{
@@ -17,6 +18,10 @@ class _formData extends State<UserForm> {
   TextEditingController dateController = TextEditingController();
   TextEditingController firstName = TextEditingController();
   TextEditingController lastName = TextEditingController();
+  TextEditingController age = TextEditingController();
+  TextEditingController location = TextEditingController();
+  String genderSelection = 'Male';
+  final repo = UserRepository();
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +33,10 @@ class _formData extends State<UserForm> {
       body: Column(
         children: [
           Padding(padding: EdgeInsets.only(left: 15,right: 15,top: 25),
-          child:text_field(HintText: 'First Name')
+          child:text_field(HintText: 'First Name',controller_in: firstName,)
           ),
           Padding(padding: EdgeInsets.only(left: 15,right: 15,top: 10),
-          child: text_field(HintText: 'Last Name')
+          child: text_field(HintText: 'Last Name',controller_in: lastName,)
           ),
           Row(
             children: [
@@ -39,12 +44,19 @@ class _formData extends State<UserForm> {
                 child: Padding(
                     padding: const EdgeInsets.only(left: 15,top: 12),
                     child: DropdownMenu<String>(
+
                       hintText: 'Gender',
+                      initialSelection: genderSelection,
+                      onSelected: (value){
+                        setState(() {
+                          genderSelection = value!;
+                        });
+                      },
                       requestFocusOnTap: true,
                       dropdownMenuEntries: const <DropdownMenuEntry<String>>[
-                        DropdownMenuEntry(value: '1', label: 'Male'),
-                        DropdownMenuEntry(value: '2', label: 'Female'),
-                        DropdownMenuEntry(value: '3', label: 'Other')
+                        DropdownMenuEntry(value: 'Male', label: 'Male'),
+                        DropdownMenuEntry(value: 'Female', label: 'Female'),
+                        DropdownMenuEntry(value: 'Other', label: 'Other')
                       ],
                       inputDecorationTheme: InputDecorationTheme(
                         border: OutlineInputBorder(
@@ -98,21 +110,44 @@ class _formData extends State<UserForm> {
            children: [
              Expanded(
                child: Padding(padding: EdgeInsets.only(top: 12,left: 15),
-                   child: text_field(HintText: 'Age')
+                   child: text_field(HintText: 'Age',controller_in: age,)
                ),
              ),
              Container(
                width: 200,
                margin: EdgeInsets.only(left: 15),
                child: Padding(padding: EdgeInsets.only(top: 12,right: 15),
-                 child: text_field(HintText: 'Location',)
+                 child: text_field(HintText: 'Location',controller_in: location,)
                ),
              )
            ],
          ),
 
           SizedBox(height: 100),
-          ElevatedButton(onPressed: (){},
+          ElevatedButton(onPressed: () async{
+            try{
+              User user = User(
+                firstName: firstName.text,
+                lastName: lastName.text,
+                age: age.text,
+                DOB: dateController.text,
+                gender: genderSelection,
+                location: location.text,
+              );
+              await repo.addUser(user);
+
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(
+                  SnackBar(
+                      content: Text(
+                          'User Added succesfully'
+                      )
+                  )
+              );
+            }catch(e){
+
+            }
+          },
               child: Text('Submit'),
             style: ElevatedButton.styleFrom(
               shadowColor: Colors.black,

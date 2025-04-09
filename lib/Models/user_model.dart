@@ -4,7 +4,7 @@ class User{
   final String lastName;
   final String DOB;
   final String gender;
-  final int? age;
+  final String age;
   final String location;
 
   User({

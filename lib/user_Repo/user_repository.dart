@@ -4,12 +4,12 @@ import 'package:crud_frontend/Models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class user_repository{
+class UserRepository{
   final String baseUrl = 'https/localhost:8080/api/..';
 
   Future<void> addUser(User user)async {
     final res = await http.post(
-      Uri.parse(baseUrl),
+      Uri.parse(baseUrl+'/add'),
       headers: {'Content Type': 'application/json'},
       body: jsonEncode(user.toJson())
     );

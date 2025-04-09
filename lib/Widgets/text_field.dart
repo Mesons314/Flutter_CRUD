@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 class text_field extends StatefulWidget {
   final String HintText;
-  const text_field({super.key,required this.HintText});
+  final TextEditingController controller_in;
+  const text_field({super.key,required this.HintText, required this.controller_in});
 
   @override
   State<text_field> createState() {
@@ -16,6 +17,7 @@ class _textField extends State<text_field>{
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: widget.controller_in,
         decoration: InputDecoration(
           hintText: widget.HintText,
           border: OutlineInputBorder(
