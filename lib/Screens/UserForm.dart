@@ -4,6 +4,8 @@ import 'package:crud_frontend/Widgets/text_field.dart';
 import 'package:crud_frontend/user_Repo/user_repository.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/textEditingController.dart';
+
 class UserForm extends StatefulWidget{
   const UserForm({super.key});
 
@@ -15,12 +17,7 @@ class UserForm extends StatefulWidget{
 
 class _formData extends State<UserForm> {
 
-  TextEditingController dateController = TextEditingController();
-  TextEditingController firstName = TextEditingController();
-  TextEditingController lastName = TextEditingController();
-  TextEditingController age = TextEditingController();
-  TextEditingController location = TextEditingController();
-  String genderSelection = 'Male';
+  final controllers = TextEditing();
   final repo = UserRepository();
 
   @override
@@ -33,10 +30,10 @@ class _formData extends State<UserForm> {
       body: Column(
         children: [
           Padding(padding: EdgeInsets.only(left: 15,right: 15,top: 25),
-          child:text_field(HintText: 'First Name',controller_in: firstName,)
+          child:text_field(HintText: 'First Name',controller_in: controllers.firstName,)
           ),
           Padding(padding: EdgeInsets.only(left: 15,right: 15,top: 10),
-          child: text_field(HintText: 'Last Name',controller_in: lastName,)
+          child: text_field(HintText: 'Last Name',controller_in: controllers.lastName,)
           ),
           Row(
             children: [
@@ -46,10 +43,10 @@ class _formData extends State<UserForm> {
                     child: DropdownMenu<String>(
 
                       hintText: 'Gender',
-                      initialSelection: genderSelection,
+                      initialSelection: controllers.gender,
                       onSelected: (value){
                         setState(() {
-                          genderSelection = value!;
+                          controllers.gender = value!;
                         });
                       },
                       requestFocusOnTap: true,
@@ -85,11 +82,11 @@ class _formData extends State<UserForm> {
                         );
                         if(picked != null){
                           setState(() {
-                            dateController.text = "${picked.day}/${picked.month}/${picked.year}";
+                            controllers.dob.text = "${picked.day}/${picked.month}/${picked.year}";
                           });
                         }
                       },
-                      controller: dateController,
+                      controller: controllers.dob,
                       decoration: InputDecoration(
                           hintText: "DOB",
                           border: OutlineInputBorder(
@@ -110,14 +107,14 @@ class _formData extends State<UserForm> {
            children: [
              Expanded(
                child: Padding(padding: EdgeInsets.only(top: 12,left: 15),
-                   child: text_field(HintText: 'Age',controller_in: age,)
+                   child: text_field(HintText: 'Age',controller_in: controllers.age,)
                ),
              ),
              Container(
                width: 200,
                margin: EdgeInsets.only(left: 15),
                child: Padding(padding: EdgeInsets.only(top: 12,right: 15),
-                 child: text_field(HintText: 'Location',controller_in: location,)
+                 child: text_field(HintText: 'Location',controller_in: controllers.location,)
                ),
              )
            ],
@@ -127,12 +124,12 @@ class _formData extends State<UserForm> {
           ElevatedButton(onPressed: () async{
             try{
               User user = User(
-                firstName: firstName.text,
-                lastName: lastName.text,
-                age: age.text,
-                DOB: dateController.text,
-                gender: genderSelection,
-                location: location.text,
+                firstName: controllers.firstName.text,
+                lastName: controllers.lastName.text,
+                age: controllers.age.text,
+                dob: controllers.dob.text,
+                gender: controllers.gender,
+                location: controllers.location.text,
               );
               await repo.addUser(user);
 
@@ -144,8 +141,13 @@ class _formData extends State<UserForm> {
                       )
                   )
               );
+              setState(() {
+                controllers.clearAll();
+              });
             }catch(e){
-
+              print('Error: $e');
+              ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text('Error in adding the user')));
             }
           },
               child: Text('Submit'),

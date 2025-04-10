@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="587b5352-31e7-45c1-8030-729a9632c832" name="Changes" comment="Created the user list view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Models/user_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Screens/UserForm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/UserForm.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Widgets/text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Widgets/text_field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_Repo/user_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_Repo/user_repository.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2,7 +2,7 @@ class User{
   final int? id;
   final String firstName;
   final String lastName;
-  final String DOB;
+  final String dob;
   final String gender;
   final String age;
   final String location;
@@ -11,7 +11,7 @@ class User{
     this.id,
     required this.firstName,
     required this.lastName,
-    required this.DOB,
+    required this.dob,
     required this.gender,
     required this.age,
     required this.location
@@ -23,7 +23,7 @@ class User{
       'firstName': firstName,
       'lastName': lastName,
       'gender': gender,
-      'DOB': DOB,
+      'dob': dob,
       'location': location,
       'age': age
     };
