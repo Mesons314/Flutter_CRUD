@@ -1,11 +1,11 @@
 class User{
   final int? id;
-  final String firstName;
-  final String lastName;
-  final String dob;
-  final String gender;
-  final String age;
-  final String location;
+  final String? firstName;
+  final String? lastName;
+  final String? dob;
+  final String? gender;
+  final String? age;
+  final String? location;
 
   User({
     this.id,
@@ -17,6 +17,18 @@ class User{
     required this.location
 });
 
+  factory User.fromJson(Map<String, dynamic> json){
+    return User(
+      id: json['id'],
+      firstName: json['firstName'],
+      lastName: json['lastName'],
+      dob: json['dob'],
+      gender: json['gender'],
+      age: json['age'],
+      location: json['location'],
+
+    );
+  }
 
   Map<String,dynamic> toJson(){
     return {

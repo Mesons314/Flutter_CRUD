@@ -8,6 +8,7 @@ class TextEditing{
   TextEditingController location = TextEditingController();
   String gender = 'Male';
 
+
   void clearAll(){
     location.clear();
     lastName.clear();

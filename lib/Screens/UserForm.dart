@@ -25,14 +25,14 @@ class _formData extends State<UserForm> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('UserForm'),
+        title: const Text('UserForm'),
       ),
       body: Column(
         children: [
-          Padding(padding: EdgeInsets.only(left: 15,right: 15,top: 25),
+          Padding(padding: const EdgeInsets.only(left: 15,right: 15,top: 25),
           child:text_field(HintText: 'First Name',controller_in: controllers.firstName,)
           ),
-          Padding(padding: EdgeInsets.only(left: 15,right: 15,top: 10),
+          Padding(padding: const EdgeInsets.only(left: 15,right: 15,top: 10),
           child: text_field(HintText: 'Last Name',controller_in: controllers.lastName,)
           ),
           Row(
@@ -64,7 +64,7 @@ class _formData extends State<UserForm> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 15),
+                margin: const EdgeInsets.only(left: 15),
                 width: 200,
                 child: InkWell(
                   child: Padding(
@@ -91,7 +91,7 @@ class _formData extends State<UserForm> {
                           hintText: "DOB",
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                   color: Colors.lightBlueAccent
                               )
                           )
@@ -106,21 +106,21 @@ class _formData extends State<UserForm> {
          Row(
            children: [
              Expanded(
-               child: Padding(padding: EdgeInsets.only(top: 12,left: 15),
+               child: Padding(padding: const EdgeInsets.only(top: 12,left: 15),
                    child: text_field(HintText: 'Age',controller_in: controllers.age,)
                ),
              ),
              Container(
                width: 200,
-               margin: EdgeInsets.only(left: 15),
-               child: Padding(padding: EdgeInsets.only(top: 12,right: 15),
+               margin: const EdgeInsets.only(left: 15),
+               child: Padding(padding: const EdgeInsets.only(top: 12,right: 15),
                  child: text_field(HintText: 'Location',controller_in: controllers.location,)
                ),
              )
            ],
          ),
 
-          SizedBox(height: 100),
+          const SizedBox(height: 100),
           ElevatedButton(onPressed: () async{
             try{
               User user = User(
@@ -135,7 +135,7 @@ class _formData extends State<UserForm> {
 
               ScaffoldMessenger.of(context)
                   .showSnackBar(
-                  SnackBar(
+                  const SnackBar(
                       content: Text(
                           'User Added succesfully'
                       )
@@ -147,10 +147,10 @@ class _formData extends State<UserForm> {
             }catch(e){
               print('Error: $e');
               ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text('Error in adding the user')));
+              .showSnackBar(const SnackBar(content: Text('Error in adding the user')));
             }
           },
-              child: Text('Submit'),
+              child: const Text('Submit'),
             style: ElevatedButton.styleFrom(
               shadowColor: Colors.black,
               backgroundColor: Colors.lightBlueAccent,

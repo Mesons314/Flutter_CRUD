@@ -5,6 +5,7 @@ import 'package:crud_frontend/Screens/UserList.dart';
 import 'package:crud_frontend/Screens/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../Models/user_model.dart';
 import 'RoutesName.dart';
 
 class Routes{
@@ -19,7 +20,8 @@ class Routes{
       case RoutesName.homePage:
         return MaterialPageRoute(builder: (context)=> const MyHomePage(title: 'Bloc'));
       case RoutesName.userData:
-        return MaterialPageRoute(builder: (context)=> UserData());
+        final userId = settings.arguments as int;
+        return MaterialPageRoute(builder: (context) => UserData(userId: userId));
       default:
         return MaterialPageRoute(builder: (context){
           return const Scaffold(
