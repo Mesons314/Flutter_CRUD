@@ -20,4 +20,31 @@ class UserRepository{
       throw Exception("Failed to save user");
     }
   }
+
+  Future<List<User>> getUser() async{
+    final res = await http.get(
+      Uri.parse('$baseUrl/getUser'),
+    );
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+      return body.map((e) => User.fromJson(e)).toList();
+    } else {
+      print('Status Code: ${res.statusCode}');
+      print('Response Body: ${res.body}');
+      throw Exception("Failed to load data");
+    }
+  }
+  
+  Future<User> getUserById(int id) async{
+    final res = await http.get(
+      Uri.parse('$baseUrl/getById/$id')
+    );
+    if (res.statusCode == 200) {
+      return User.fromJson(jsonDecode(res.body));
+    } else {
+      print('Status Code: ${res.statusCode}');
+      print('Response Body: ${res.body}');
+      throw Exception("Failed to load data");
+    }
+  }
 }

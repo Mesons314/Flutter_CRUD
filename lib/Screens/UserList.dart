@@ -1,7 +1,8 @@
 import 'package:crud_frontend/Routes/RoutesName.dart';
+import 'package:crud_frontend/user_Repo/user_repository.dart';
 import 'package:flutter/material.dart';
 
-import 'UserData.dart';
+import '../Models/user_model.dart';
 
 class UserList extends StatefulWidget {
   @override
@@ -10,6 +11,13 @@ class UserList extends StatefulWidget {
   }
 }
   class userlist extends State<UserList>{
+  late Future<List<User>> _userList;
+
+  @override
+  void initState(){
+    super.initState();
+    _userList = UserRepository().getUser();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,32 +25,44 @@ class UserList extends StatefulWidget {
         backgroundColor: Colors.lightBlueAccent,
         title: Text('User'),
       ),
-      body: ListView(
-        children: [
-          InkWell(
-            onTap: (){
-              Navigator.pushNamed(context, RoutesName.userData);
-            },
-            child: ListTile(
-              leading: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Icon(
-                  Icons.person
-                ),
-              ),
-              title: Padding(
-                padding: const EdgeInsets.only(left: 12),
-                child: Text('Abhinav Dwivedi'),
-              ),
-              subtitle: Padding(
-                padding: const EdgeInsets.only(left: 12),
-                child: Text('Mumbai'),
-              ),
-            ),
-          )
-        ],
+      body: FutureBuilder<List<User>>(
+        future: _userList,
+        builder: (context,snapshot){
+          if(snapshot.connectionState == ConnectionState.waiting){
+            return Center(child: CircularProgressIndicator(),);
+          }
+          
+          if(snapshot.hasError){
+            return Center(child: Text('Error: ${snapshot.error}'),);
+          }
+
+          if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return Center(child: Text('No user found'));
+          }
+
+
+          return ListView.builder(
+              itemCount: snapshot.data!.length,
+              itemBuilder: (context,index){
+                final user = snapshot.data![index];
+                return InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(
+                      context,
+                      RoutesName.userData,
+                      arguments: user.id,
+                    );
+                  },
+                  child: ListTile(
+                    leading: Icon(Icons.person),
+                    title: Text('${user.firstName ?? "N/A"} ${user.lastName ?? ""}'),
+                    subtitle: Text(user.location ?? "Unknown"),
+                  ),
+                );
+              },
+          );
+        },
       )
     );
   }
-
   }
