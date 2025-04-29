@@ -1,5 +1,5 @@
 import 'package:crud_frontend/Routes/RoutesName.dart';
-import 'package:crud_frontend/Services/splash_service.dart';
+import 'package:crud_frontend/utils/splash_service.dart';
 import 'package:flutter/material.dart';
 import 'package:crud_frontend/Screens/main.dart';
 

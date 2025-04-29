@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="587b5352-31e7-45c1-8030-729a9632c832" name="Changes" comment="Created the user list view">
+    <list default="true" id="587b5352-31e7-45c1-8030-729a9632c832" name="Changes" comment="Created another dialog box to update data">
+      <change afterPath="$PROJECT_DIR$/lib/Screens/updateUser.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/be8e02c3bbae738c0f7959babda15beb/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/be8e02c3bbae738c0f7959babda15beb/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/be8e02c3bbae738c0f7959babda15beb/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/be8e02c3bbae738c0f7959babda15beb/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/be8e02c3bbae738c0f7959babda15beb/kernel_snapshot_program.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/be8e02c3bbae738c0f7959babda15beb/kernel_snapshot_program.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/be8e02c3bbae738c0f7959babda15beb/kernel_snapshot_program.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/be8e02c3bbae738c0f7959babda15beb/kernel_snapshot_program.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/be8e02c3bbae738c0f7959babda15beb/program.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/be8e02c3bbae738c0f7959babda15beb/program.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk.sha1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Models/user_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Routes/Routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Routes/Routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Screens/SplashScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/SplashScreen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Screens/UserData.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/UserData.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Screens/UserForm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/UserForm.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Screens/UserList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/UserList.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Services/splash_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/splash_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_Repo/user_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_Repo/user_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/textEditingController.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/textEditingController.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +90,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\REST_Flutter\crudFrontend\lib\utils" />
       <recent name="C:\REST_Flutter\crudFrontend\lib\Screens" />
     </key>
   </component>
@@ -107,12 +125,48 @@
       <option name="project" value="LOCAL" />
       <updated>1742929281201</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Modified the route to pass only id to fetch data">
+      <option name="closed" value="true" />
+      <created>1744280618301</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744280618301</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated the functionality to fetch the user data on the screen from the backend">
+      <option name="closed" value="true" />
+      <created>1744280660375</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744280660375</updated>
+    </task>
+    <task id="LOCAL-00005">
+      <option name="closed" value="true" />
+      <created>1744443224169</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744443224169</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Created another dialog box to update data">
+      <option name="closed" value="true" />
+      <created>1744443265792</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744443265792</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added the user route to view the user list" />
     <MESSAGE value="Created the user list view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the user list view" />
+    <MESSAGE value="Modified the route to pass only id to fetch data" />
+    <MESSAGE value="Updated the functionality to fetch the user data on the screen from the backend" />
+    <MESSAGE value="Created a dialog box to delete data" />
+    <MESSAGE value="Created another dialog box to update data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created another dialog box to update data" />
   </component>
 </project>
